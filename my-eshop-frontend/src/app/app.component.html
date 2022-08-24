@@ -1,0 +1,18 @@
+<div><img class="imglogo" align="center" src="../assets/logo.jpg"/></div>
+<div><div *ngIf="!user?.id" align="right">
+
+
+    <button class="mainbutton"routerLink='login'>Log in</button>
+</div>
+</div>
+<div *ngIf="storeService.cart.cartItems.length > 0" align="right">
+</div>
+<div align="right">
+</div>
+<div *ngIf="user?.id" align="right">
+    User: {{user?.username}} 
+
+    <button routerLink='cart'>Cart</button>
+    <button href="#" (click)="logout($event)">Logout</button>
+</div>
+<router-outlet></router-outlet>

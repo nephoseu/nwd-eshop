@@ -1,0 +1,29 @@
+<h3>Cart Details</h3>
+<table class="table table-striped">
+  <tr>
+    <th>&nbsp;</th>
+    <th>Name</th>
+    <th>Unit Price</th>
+    <th>Quantity</th>
+    <th>Total Price</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr *ngFor="let item of storeService.cart.cartItems">
+    <td><a routerLink="/items/{{item.item.id}}"><img src="/assets/angular.svg" width="70px"/></a></td>
+    <td><a routerLink="/items/{{item.item.id}}">{{item.item.name}}</a></td>
+    <td>{{item.item.price}}</td>
+    <td><input type="number" [ngModel]="item.quantity" min="0" (change)="onQuantityChange($event, item.item.id)" size="2" id="quantity" appAnalytics events="change blur"/></td>
+    <td>{{item.item.price * item.quantity}}</td>
+    <td><input type="button" id="remove" value="Remove" (click)="removeFromCart(item)" appAnalytics events="click"/></td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+    <td>{{storeService.cart.getTotalValue()}}</td>
+    <td>&nbsp;</td>
+  </tr>  
+</table>
+<div>
+<button (click)="emptyCart()" id="empty" [disabled]="storeService.cart.cartItems.length == 0" appAnalytics events="click">Empty Cart</button>
+<button routerLink="/checkout" id="checkout" [disabled]="storeService.cart.cartItems.length == 0 || !storeService.cart.isCartValid()">Go to Checkout..</button>
+<button routerLink="">Back to items</button><br/>
+</div>

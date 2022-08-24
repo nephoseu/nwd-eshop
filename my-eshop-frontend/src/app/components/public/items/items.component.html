@@ -1,0 +1,39 @@
+<button (click)="openFilter()">Filters</button>
+
+Page size:
+<select [(ngModel)]="storeService.pageSize" (change)="onPageSizeChange()" id="pageSize">
+  <option value="3">3</option>
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="50">50</option>
+</select>
+<br/>
+
+
+<div *ngIf="storeService.items.length>0" class="card-body"> 
+  <div class="row">
+      <div *ngFor="let item of storeService.items;">
+          <div class="card" style="width: 15rem">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a routerLink="/items/{{item.id}}">
+                  {{item.name}}
+                  <img src="{{imageUrl}}/{{ (item.images !== undefined)? item.images[0].fileName : '' }}" height="70px" style="margin:10px"/>
+                </a>
+              </h5>
+              <p class="card-subtitle mb-2 text-muted">${{item.price}}</p>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div *ngIf="storeService.items.length == 0" class="card-body"> 
+  No products were found
+</div>
+
+<ngb-pagination
+[(page)]="storeService.page"
+[pageSize]="storeService.pageSize"
+[collectionSize]="storeService.count"
+(pageChange)="onPageChange($event)">
+</ngb-pagination>

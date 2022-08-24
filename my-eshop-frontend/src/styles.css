@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+.row > div {
+    margin-top:5px;
+    padding: 10px;
+ }
+ html, body {
+    height: 100%;
+    padding: 20px;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: white;
+    background-color:#0c6ae1;
+  }
+a  {
+    color:white;
+  }
+a:hover
+{
+  color: white;
+}
+.card
+{
+  color:black;
+  background-color: white;
+}
+.table td, .table th, .table a, .card a
+{
+color: #0c6ae1;
+background-color: white;
+}
+.imglogo
+{align-items: left;
+  width: 15%;
+  height: 15%;
+  margin: 0;
+}
+  table {
+    border: 0px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border-bottom: 1px solid #dddddd;
+    }
+    html, body {
+        height: 100%;
+      }
+      
+      body {
+        margin: 0;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+      }
+      
+      table {
+        border: 0px;
+        border-spacing: 0px;
+        border-collapse: collapse; 
+      }
+ button
+ {
+  background-color: #0c6ae1;
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+ }
+
+ /* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue;
+
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+input, optgroup, select, textarea {
+  background-color: white;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: white;
+  background-color: #0c6ae1;
+  border-color: white;
+}
+.table td, .table th, .modal-body {
+  color:black;
+}
+.modal-header, .card-body a, .card-header
+{
+  color:#0c6ae1;
+}

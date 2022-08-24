@@ -1,0 +1,23 @@
+<h3>shippings</h3>
+<div class="card-body">
+    <table *ngIf="shippings" class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Order Date</th>
+            <th>Order Id</th>
+            <th>Shipping Date</th>
+            <th>Status</th>
+            <th>Total Price</th>
+            <th>UserId</th>
+        </tr>
+        <tr *ngFor="let shipping of shippings">
+            <td>{{shipping.id}}</td>
+            <td>{{shipping.orderDate}}</td>
+            <td>{{shipping.orderId}}</td>
+            <td>{{shipping.shippingDate}}</td>
+            <td>{{shipping.status}}</td>
+            <td>{{shipping.totalPrice}}</td>
+            <td>{{shipping.userId}}</td>
+        </tr>
+    </table>
+</div>
