@@ -11,7 +11,7 @@
 </div>
 <div *ngIf="user?.id" align="right">
     User: {{user?.username}} 
-
+    <button *ngIf="user?.role=='admin'" routerLink="admin">Admin</button>
     <button routerLink='cart'>Cart</button>
     <button href="#" (click)="logout($event)">Logout</button>
 </div>
