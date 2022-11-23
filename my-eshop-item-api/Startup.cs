@@ -32,7 +32,6 @@ namespace my_eshop_api
             services.AddCors(options =>
             {
                 options.AddPolicy(my_eshop_AllowSpecificOrigins, builder => builder.WithOrigins("http://localhost:4200", "https://localhost:4200")
-                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());
